@@ -1,7 +1,21 @@
 def word_count(s):
     # Your code here
+    edge_cases = [":", ";", ",", ".", "-", "+", "=", "/", "\\", "|", "[", "]", "{", "}", "(", ")", "*", "^", "&", "\""]
+    dictionary = dict()
+    lower_case_string = s.lower()
 
+    for item in edge_cases:
+        lower_case_string = lower_case_string.replace(item, "")
+    lower_case_string = lower_case_string.split()
 
+    for item in lower_case_string:
+        if item in dictionary:
+            x = dictionary[item]
+            x += 1
+            dictionary[item] = x
+        else:
+            dictionary[item] = 1
+    return dictionary
 
 if __name__ == "__main__":
     print(word_count(""))
