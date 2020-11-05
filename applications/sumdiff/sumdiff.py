@@ -12,4 +12,9 @@ def f(x):
     return x * 4 + 6
 
 # Your code here
-
+    diffs = [] 
+    for i, x in enumerate(q): 
+        for j, y in enumerate(q): 
+            if i != j:  
+                diffs.append(abs(x-y))     
+    return int(sum(diffs)/2) 
